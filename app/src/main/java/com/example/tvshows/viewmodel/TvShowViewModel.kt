@@ -31,7 +31,6 @@ constructor(private val repository: TvShowRepository) : ViewModel() {
             } else {
                 Log.d("tag", "getAllTvShows Error: ${response.code()}")
             }
-
         }
     }
 }
