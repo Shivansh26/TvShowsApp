@@ -25,29 +25,25 @@ class MainActivity : AppCompatActivity() {
 
     private fun setUpRv(){
         tvShowAdapter = TvShowAdapter()
+
         binding.recyclerView.apply {
             adapter = tvShowAdapter
             layoutManager = LinearLayoutManager(this@MainActivity, LinearLayoutManager.HORIZONTAL, false)
             setHasFixedSize(true)
         }
+
         binding.rvEpisodes.apply {
             adapter = tvShowAdapter
-            layoutManager = LinearLayoutManager(
-                this@MainActivity, LinearLayoutManager.HORIZONTAL,
-                false
-            )
-
+            layoutManager = LinearLayoutManager(this@MainActivity, LinearLayoutManager.HORIZONTAL, false)
             setHasFixedSize(true)
         }
+
         binding.rvRecentlyAdded.apply {
             adapter = tvShowAdapter
-            layoutManager = LinearLayoutManager(
-                this@MainActivity, LinearLayoutManager.HORIZONTAL,
-                false
-            )
-
+            layoutManager = LinearLayoutManager(this@MainActivity, LinearLayoutManager.HORIZONTAL, false)
             setHasFixedSize(true)
         }
+
         tvShowViewModel.responseTvShow.observe(this) { listTvShow ->
             tvShowAdapter.tvShowsResponseItem = listTvShow
         }
